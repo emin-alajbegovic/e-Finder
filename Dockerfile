@@ -1,18 +1,11 @@
-# FROM python:3.8-slim-buster
-
-# WORKDIR /app
-
-# COPY requirements.txt requirements.txt
-# RUN pip3 install -r requirements.txt
-
-# COPY . .
-
-# CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
-
+# image
 FROM python:3.8-slim-buster
 
-ADD main.py .
+# copy all files from current directory into the image
+COPY . .
 
+# already enabled in python - os library
 # RUN pip install os-sys
 
+# command to run it
 CMD [ "python", "./main.py" ]
